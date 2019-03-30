@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/database?characterEncoding=utf-8&connectTimeout=3000
+    username: username
+    password: password
+  mvc:
+    view:
+      prefix: pages/
+      suffix: .jsp
+  resources:
+    static-locations: static/
+
+mybatis:
+  type-aliases-package: com.example.jsp.demo.dao
+  mapper-locations: classpath:mapper/*Mapper.xml
+
+# 打印sql
+logging:
+  level:
+    com.xhkj.server.energy.dao: debug
